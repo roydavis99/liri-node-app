@@ -110,9 +110,16 @@ function DoWhatItSays(){
     });
 }
 
+
+//let loggingFlg = false;
+//let resultCol = [];
+
 function LogIt(action, value, result){
+    //resultCol.push(result);
+    
     console.log(result);
-    fs.appendFile("./log.txt", action + "\n"+ value + "\n" + result, function(err){
+
+    fs.appendFile("./log.txt", "\n" + action + "\n"+ value + "\n" + result, function(err){
         if(err){
             console.log(err);
             return;
