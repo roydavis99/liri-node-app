@@ -1,6 +1,57 @@
 # liri-node-app
 Liri instead of Siri
 
+# What does LIRI do
+LIRI is a user tool that give information back to the user when you give it a specific command.
+
+# Init
+
+
+# Create You Keys
+Next, create a file named `.env`, add the following to it, replacing the values with your API keys (no quotes) once you have them:
+
+# Spotify API keys
+
+SPOTIFY_ID=your-spotify-id
+SPOTIFY_SECRET=your-spotify-secret
+
+* You will utilize the [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) package in order to retrieve song information from the Spotify API.
+
+   * The Spotify API requires you sign up as a developer to generate the necessary credentials. You can follow these steps in order to generate a **client id** and **client secret**:
+
+   * Step One: Visit <https://developer.spotify.com/my-applications/#!/>
+
+   * Step Two: Either login to your existing Spotify account or create a new one (a free account is fine) and log in.
+
+   * Step Three: Once logged in, navigate to <https://developer.spotify.com/my-applications/#!/applications/create> to register a new application to be used with the Spotify API. You can fill in whatever you'd like for these fields. When finished, click the "complete" button.
+
+   * Step Four: On the next screen, scroll down to where you see your client id and client secret. Copy these values down somewhere, you'll need them to use the Spotify API and the [node-spotify-api package](https://www.npmjs.com/package/node-spotify-api).
+
+
+# What are my options
+Menu - will display what options are available
+"concert-this":
+        ConcertThis(userInput);
+            break;
+        case "spotify-this-song":
+        SpotifyThisSong(userInput);
+            break;
+        case "movie-this":
+        MovieThis(userInput);
+            break;
+        case "do-what-it-says":
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # LIRI Bot
