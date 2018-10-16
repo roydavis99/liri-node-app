@@ -29,20 +29,19 @@ function ConcertThis(artist){
     let concertURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
     
     Request(concertURL, function(error, response, data){
-        let result ='';
+        let result =artist;
         if(!error && response.statusCode === 200){
-            result = '---------------------------------';
-            console.log('---------------------------------');
             //console.log(JSON.parse(data));
+
             JSON.parse(data).forEach(stop =>{
+                result += "\n\t---------------------------------";
                 result += "\n\t" + stop.venue.name;
                 result += "\n\t" + stop.venue.city + " " + stop.venue.country;
                 result += "\n\t" + Moment(stop.datetime).format("MM/DD/YYYY");
-                result += "\n\t" + '---------------------------------';
 
             });
         } else {
-            result = "Sorry, could not find the artist.";
+            result += "\nSorry, could not find the artist.";
         }
         LogIt("concert-this", artist, result);
     });
@@ -119,12 +118,12 @@ function LogIt(action, value, result){
     
     console.log(result);
 
-    fs.appendFile("./log.txt", "\n" + action + "\n"+ value + "\n" + result, function(err){
+    fs.appendFile("./log.txt", "\n" + action + "\n"+ value + result + "\n-------------", function(err){
         if(err){
             console.log(err);
             return;
         }
-        console.log("logged");
+        //console.log("logged");
     });
 }
 
